@@ -1,6 +1,5 @@
 import * as React from "react";
 import {CSSProperties} from "react";
-import keycodes from "../../util/keycodes";
 
 interface SoundProps {
     title: string,
@@ -63,7 +62,7 @@ export default class SoundEl extends React.Component<SoundProps, SoundState> {
     }
 
     handleKeyDown = (e) => {
-        if (!window["isEditName"] && e.keyCode == keycodes[this.state.key]) {
+        if (!window["isEditName"] && e.key == this.state.key) {
             this.play();
         }
     };
